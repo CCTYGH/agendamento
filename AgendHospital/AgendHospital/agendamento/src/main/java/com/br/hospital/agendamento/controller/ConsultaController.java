@@ -12,9 +12,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
+import com.br.hospital.agendamento.entity.Cliente;
 import com.br.hospital.agendamento.entity.Consulta;
 import com.br.hospital.agendamento.entity.Medico;
+import com.br.hospital.agendamento.service.ClienteService;
 import com.br.hospital.agendamento.service.ConsultaService;
 import com.br.hospital.agendamento.service.MedicoService;
 
@@ -31,6 +32,9 @@ public class ConsultaController {
 
     @Autowired
     private MedicoService medicoService;
+
+    @Autowired
+    private ClienteService clienteService;
 
 
 
@@ -58,7 +62,9 @@ public class ConsultaController {
     model.addAttribute("consulta", new Consulta());
     List<Medico> medicos = medicoService.findAll();
     model.addAttribute("medicos", medicos);
-    // Retorna a página do formulário de alunos 
+    // Retorna a página do formulário de alunos
+    List<Cliente> clientes = clienteService.findAll();
+    model.addAttribute("clientes", clientes);
     return "consultas/formConsul";
 
   }
@@ -69,6 +75,9 @@ public class ConsultaController {
       model.addAttribute("consulta", consulta);
       List<Medico> medicos = medicoService.findAll();
       model.addAttribute("medicos", medicos);
+      List<Cliente> clientes = clienteService.findAll();
+      model.addAttribute("clientes", clientes);
+
       return "consultas/formConsul";
   }
   
