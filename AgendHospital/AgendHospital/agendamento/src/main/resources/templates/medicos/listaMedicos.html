@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista medicos</title>
+</head>
+
+<body>
+
+    <h1 align="center">Lista de Medico</h1>
+    <h3 align="center"> <a href="/medicos/criar"> Cadastrar </a></h3>
+    <!--Tabela para exibir alunos registrados-->
+
+    <table align="center" border="1">
+        <tr>
+            <th colspan="10">Lista de Medico</th>
+        </tr>
+        <th>ID</th>
+        <th>NomeMeidos</th>
+        <th>Crm</th>
+        <th>Especialiades</th>
+        <th colspan="2">Ações</th>
+
+        <tr th:each="medico:${medicos}">
+            <td th:text="${medico.idMedico}"></td>
+            <td th:text="${medico.nomeMedico}"></td>
+            <td th:text="${medico.crm}"></td>
+            <td th:text="${medico.especialidade}"></td>
+            <td>
+                <a th:href="@{/medicos/editar/{id}(id=${medico.idMedico})}">Editar</a>
+                <a th:href="@{/medicos/excluir/{id}(id=${medico.idMedico})}">Excluir</a>
+            </td>
+        </tr>
+</table>
+</body>
+
+</html>
