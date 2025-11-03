@@ -2,6 +2,8 @@ package com.br.hospital.agendamento.entity;
 
 import java.time.LocalDateTime;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Column;
@@ -34,7 +36,7 @@ public class Consulta {
 
 
     
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm")
+    @DateTimeFormat(pattern = "dd-MM-yyyy 'T'HH:mm")
     @Column (nullable = false)
     private LocalDateTime datahoraConsulta;
 
