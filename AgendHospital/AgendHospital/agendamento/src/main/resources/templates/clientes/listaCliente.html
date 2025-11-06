@@ -24,8 +24,6 @@
         <th>CPF</th>
         <th>Cep</th>
         <th>Endereço</th>
-        <th>Bairro</th>
-        <th>Número</th>
         <th>Cidade e estado</th>
         <th>complemento</th>
         <th colspan="2">Ações</th>
@@ -36,9 +34,8 @@
              <td th:text="${cliente.telefone}"></td>
             <td th:text="${cliente.cpf}"></td>
             <td th:text="${cliente.cep}"></td>
-            <td th:text="${cliente.endereco}"></td>
-            <td th:text="${cliente.bairro}"></td>
-            <td th:text="${cliente.numero}"></td>
+            <td th:text="${cliente.endereco + ', ' + cliente.numero + ' - ' + cliente.bairro}"></td>
+
             <td th:text="${cliente.estadoCidade}"></td>
             <td th:text="${cliente.complemento}"></td>
         

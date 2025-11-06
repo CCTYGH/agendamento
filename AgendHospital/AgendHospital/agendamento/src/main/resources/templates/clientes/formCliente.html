@@ -22,33 +22,30 @@
         <label for="telefone">Telefone:</label>
         <input type="text" name="telefone" th:field="*{telefone}">
         <br />
-        <label for="cep">Cep: </label>
-        <input type="text" name="cep" th:field="*{cep}">
+    <label for="cep">Cep: </label>
+    <input id="cep" type="text" name="cep" th:field="*{cep}">
         <button type="button" onclick="buscarCep()">Buscar</button>
         <br />  
-        <label for="endereco">Endereço:</label>
-        <input type="text" name="endereco" th:field="*{endereco}">
+    <label for="endereco">Endereço:</label>
+    <input id="logradouro" type="text" name="endereco" th:field="*{endereco}">
         <br />
         <label for="bairro">Bairro:</label>
-        <input type="text" name="bairro" th:field="*{bairro}">
+    <input id="bairro" type="text" name="bairro" th:field="*{bairro}">
         <br />
         <label for="estadoCidade">Cidade e Estado:</label>
-        <input type="text" name="estadoCidade" th:field="*{estadoCidade}">
+    <input id="estadoCidade" type="text" name="estadoCidade" th:field="*{estadoCidade}">
         <br />
         <label for="numero">Número:</label>
-        <input type="text" name="numero" th:field="*{numero}">
+    <input id="numero" type="text" name="numero" th:field="*{numero}">
         <br />
         <label for="complemento">Complemento:</label>
-        <input type="text" name="complemento" th:field="*{complemento}">
-        <br />
-        <label for="telefone">Telefone:</label>
-        <input type="text" name="telefone" th:field="*{telefone}">
+    <input id="complemento" type="text" name="complemento" th:field="*{complemento}">
         <br />
 
         <input type="submit" name="enviar" value="Enviar">
         <br />
 </form>
 
-<script th:src="@{/js/script.js}"></script>
+<script src="/js/script.js"></script>
 </body>
 </html>

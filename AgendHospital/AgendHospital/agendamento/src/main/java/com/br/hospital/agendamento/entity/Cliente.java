@@ -30,7 +30,7 @@ private String nomeCliente;
 private String endereco;
 
 @Column (nullable = false, length = 100)
-private Integer cpf;
+private String cpf;
 
 @Column (nullable = false, length = 100)
 private String bairro;
@@ -49,7 +49,7 @@ private String estadoCidade;
 private String complemento;
 
 @Column (nullable = false, length = 20)
-private Integer telefone;
+private String telefone;
 
 
 
