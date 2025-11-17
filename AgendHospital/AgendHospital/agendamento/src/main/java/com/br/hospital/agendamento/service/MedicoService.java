@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.br.hospital.agendamento.dto.MedicoConsulta;
 import com.br.hospital.agendamento.entity.Medico;
 import com.br.hospital.agendamento.repository.MedicoRepository;
 
@@ -31,6 +32,11 @@ public class MedicoService {
   
 public void deleteById (Integer id){
     medicoRepository.deleteById(id);
+}
+
+public List<MedicoConsulta> medicoeconsultas(){
+return medicoRepository.medicoeconsultas();
+
 }
 
   }
