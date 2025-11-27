@@ -8,9 +8,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public class MedicoConsulta {
 
+    private Integer idConsulta;
     private String nomeMedico;
-    private String idConsulta;
-
-
     
 }
