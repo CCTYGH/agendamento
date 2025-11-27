@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.br.hospital.agendamento.dto.MedicoConsulta;
+
 import com.br.hospital.agendamento.entity.Medico;
 import com.br.hospital.agendamento.service.MedicoService;
 
@@ -69,14 +69,6 @@ public class MedicoController {
       return "redirect:/medicos/listar";
   }
 
-
-  @GetMapping("/listar-med-consu")
-  public String medicoeconsultas(Model model) {
-    List <MedicoConsulta> medicos = medicoService.medicoeconsultas();
-    model.addAttribute("medicos", medicos);
-      return "medicos/MedConsu";
-  }
-  
 
     
 }
