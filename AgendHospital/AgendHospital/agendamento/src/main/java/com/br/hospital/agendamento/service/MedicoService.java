@@ -5,6 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a1d56653b142466eee7ecfa5be5412cc490c0db6
 import com.br.hospital.agendamento.entity.Medico;
 import com.br.hospital.agendamento.repository.MedicoRepository;
 
@@ -33,6 +37,10 @@ public void deleteById (Integer id){
     medicoRepository.deleteById(id);
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a1d56653b142466eee7ecfa5be5412cc490c0db6
 
   }
 

@@ -70,5 +70,10 @@ public class MedicoController {
   }
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> a1d56653b142466eee7ecfa5be5412cc490c0db6
     
 }

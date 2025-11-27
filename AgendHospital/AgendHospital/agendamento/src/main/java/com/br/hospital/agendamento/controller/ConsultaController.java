@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.br.hospital.agendamento.dto.MedicoConsulta;
 import com.br.hospital.agendamento.entity.Cliente;
 import com.br.hospital.agendamento.entity.Consulta;
 import com.br.hospital.agendamento.entity.Medico;
@@ -89,6 +90,12 @@ public class ConsultaController {
       return "redirect:/consultas/listar";
   }
 
+  @GetMapping("/listar-med-consu")
+  public String medicoeconsultas(Model model){
+    List<MedicoConsulta> consultas = consultaService.medicoeconsultas();
+    model.addAttribute("consultas", consultas);
+    return "consultas/MedConsul";
+  }
 
-    
+  
 }
