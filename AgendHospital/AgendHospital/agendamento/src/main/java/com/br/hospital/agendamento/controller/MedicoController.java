@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b1efcfca4c9b69ee13e6b85f5f213901a221c27e
 import com.br.hospital.agendamento.entity.Medico;
 import com.br.hospital.agendamento.service.MedicoService;
 
@@ -69,4 +73,13 @@ public class MedicoController {
   }
 
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> a1d56653b142466eee7ecfa5be5412cc490c0db6
+    
+>>>>>>> b1efcfca4c9b69ee13e6b85f5f213901a221c27e
 }
