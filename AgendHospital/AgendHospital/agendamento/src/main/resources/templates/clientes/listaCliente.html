@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista clientes</title>
+</head>
+
+<body>
+
+    <h1 align="center">Lista de Clientes</h1>
+    <h3 align="center"> <a href="/clientes/criar"> Cadastrar </a></h3>
+    <!--Tabela para exibir alunos registrados-->
+
+    <table align="center" border="1">
+        <tr>
+            <th colspan="10">Lista de Clientes</th>
+        </tr>
+        <th>ID</th>
+        <th>NomeCliente</th>
+        <th>Telefone</th>
+        <th>CPF</th>
+        <th>Cep</th>
+        <th>Endereço</th>
+        <th>Cidade e estado</th>
+        <th>complemento</th>
+        <th colspan="2">Ações</th>
+
+    <tr th:each="cliente : ${clientes}">
+            <td th:text="${cliente.idCliente}"></td>
+            <td th:text="${cliente.nomeCliente}"></td>
+             <td th:text="${cliente.telefone}"></td>
+            <td th:text="${cliente.cpf}"></td>
+            <td th:text="${cliente.cep}"></td>
+            <td th:text="${cliente.endereco + ', ' + cliente.numero + ' - ' + cliente.bairro}"></td>
+
+            <td th:text="${cliente.estadoCidade}"></td>
+            <td th:text="${cliente.complemento}"></td>
+        
+
+            <td>
+                <a th:href="@{/clientes/editar/{id}(id=${cliente.idCliente})}">Editar</a>
+                <a th:href="@{/clientes/excluir/{id}(id=${cliente.idCliente})}">Excluir</a>
+            </td>
+        </tr>
+</table>
+</body>
+
+</html>

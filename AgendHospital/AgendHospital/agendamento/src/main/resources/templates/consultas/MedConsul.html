@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista Medicos e Consultas</title>
+</head>
+<body>
+     <div style="width: 200; height: 200; margin: auto;">
+    <table style="margin: 0 auto;">
+<tr>
+    <td colspan="20" style="text-align: center;">Lista  medicos e o id da consulta</td>
+</tr>
+<tr>
+    <th>Medicos</th>
+    <th>IdConsultas</th>
+</tr>
+<tr th:each="mc : ${consultas}">
+    <td th:text="${mc.nomeMedico}"></td>
+    <td th:text="${mc.idConsulta}"></td>
+</tr>
+
+    </table>
+    </div>
+    <p style="text-align: center;"><a href="/agendamento">voltar</a></p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro De Medicos</title>
+</head>
+<body>
+    
+    <h1>Cadastrar medicos</h1>
+    <form th:action="@{/medicos/salvar}" method="POST" th:object="${medico}">
+
+        <label for="idMedico">ID:</label>
+        <input type="text" name="idMedico" th:field="*{idMedico}" readonly>
+        <br />
+        <label for="nomeMedico">Nome:</label>
+        <input type="text" name="nomeMedico" th:field="*{nomeMedico}">
+        <br />
+        <label for="crm">Crm:</label>
+        <input type="text" name="crm" th:field="*{crm}">
+        <br />
+        <label for="especialidade">Especialidade:</label>
+        <input type="text" name="especialidade" th:field="*{especialidade}">
+        <br />
+
+        <input type="submit" name="enviar" value="Enviar">
+        <br />
+</form>
+</body>
+</html>
