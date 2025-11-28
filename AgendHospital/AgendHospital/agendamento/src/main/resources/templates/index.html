@@ -1,144 +1,53 @@
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema Cliníca</title>
-    <link rel="stylheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Cliníca</title>
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
-<style>
-
-body {
-      font-family: 'Arial', serif;
-      background-color: white;
-    }
-
-    h1 {
-  font-size: 3.5rem;
-  font-weight: 600;
-  text-align: center;
-  background: linear-gradient(30deg, #ff7301, #ff0800);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 2px;
-  margin-top: 40px;
-    }
-
-.text-laranja {
-  color: black;
-  background: linear-gradient(90deg, #ff7301, #ff6f00); 
-  font-size: 48px; 
-  font-family: Arial, sans-serif; 
-  text-align: center; 
-}
-
-.link-laranja{
-    color: #ff7301;
-}
-
-.card {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(44, 44, 44);
-  text-align: center;
-  transition: transform 0.5s ease;
-}
-
-.card:hover {
-  transform: scale(1.10);
-}
-
-.card h3{
-  color: #ff7301;
-  font-size: 1.5em;
-}
-
-.card a {
-  display: inline-block;
-  padding: 10px 20px;
-  margin-top: 10px;
-  background-color: #ff7301;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 1em;
-  transition: background-color 0.3s;
-}
-
-.card a:hover {
-  background-color: #ff6f00;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  margin-top: 50px;
-}
-
-footer {
-  background-color: #ff7301;
-  color: black;
-  text-align: center;
-  padding: 10px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
+<body>
+  
+  <h1 class="p-3"><strong>CLÍNICA BERCELIUS</strong></h1>
+<div class="container">
+  <div class="card">
+    <h3><strong>Lista de Médicos</strong></h3>
+    <a href="medicos/listar">Lista de Medicos</a>
+  </div>
 
 
-</style>
+  <div class="card">
+    <h3><strong>Lista de Consultas</strong></h3>
+    <a href="consultas/listar">Lista de Consultas</a>
+  </div>
+
+  <div class="card">
+    <h3><strong>Lista de Clientes</strong></h3>
+    <a href="clientes/listar">Lista de Clientes</a>
+  </div>
 
 
-        <h1 class="p-3"><strong>CLÍNICA BERCELIUS</strong></h1>
 
-        <div class="container">
+  <div class="card">
+    <h3><strong>Medicos e suas Consultas</strong></h3>
+    <a href="consultas/listar-med-consu">Medicos e Consultas</a>
+  </div>
 
-            <div class="card">
-                <h3><strong>Lista de Médicos</strong></h3>
-                <a href="medicos/listar">Lista de Medicos</a>
-                </div>
-               
-            
-                <div class="card">
-                    <h3><strong>Lista de Consultas</strong></h3>
-        <a href="consultas/listar">Lista de consultas</a>
-</div>
 
-        <div class="card">
-        <h3><strong>Lista de Clientes</strong></h3>
-        <a href="clientes/listar">Lista de clientes</a>
+
 </div>
 
 
-<<<<<<< HEAD
-<div class="card">
-        <h3><strong>Medicos e suas Consultas</strong></h3>
-        <a href="consultas/listar-med-consu">Medicos e Consultas</a>
- </div>
-
-
-=======
- </div>
-
-<<<<<<< HEAD
-        <h3 align="center"><a href="medicos/MedConsu.html">Medicos e center</a></h3>
->>>>>>> b1efcfca4c9b69ee13e6b85f5f213901a221c27e
 
 <footer>
-    <p><strong>&copy; 2025 SISTEMA WEB - Todos os direitos reservados.</strong></p>
+  <p><strong>&copy; 2025 SISTEMA WEB - Todos os direitos reservados.</strong></p>
 </footer>
 
-<<<<<<< HEAD
-=======
-=======
-        <h3 align="center"><a href="consultas/listar-med-consu">Medicos e center</a></h3>
->>>>>>> a1d56653b142466eee7ecfa5be5412cc490c0db6
->>>>>>> b1efcfca4c9b69ee13e6b85f5f213901a221c27e
+
 </body>
+
 </html>

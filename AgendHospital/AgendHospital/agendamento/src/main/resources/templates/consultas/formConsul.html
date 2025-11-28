@@ -7,9 +7,9 @@
     <title>Cadastro De consulta</title>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   </head>
-</head>
 <body>
     
+  <script th:src="@{/js/dataAtual.js}"></script>
     <h1>Cadastrar medicos</h1>
     <form th:action="@{/consultas/salvar}" method="POST" th:object="${consulta}">
 
@@ -29,7 +29,7 @@
             data-coreui-target="#datahoraConsulta"
           ></div>
           <input id="datahoraConsulta" class="form-control" type="datetime-local" name="datahoraConsulta" th:field="*{datahoraConsulta}">
-        </div>
+       
         <br />
     
         <label for="idMedico"></label>
@@ -53,5 +53,6 @@
         <input type="submit" name="enviar" value="Enviar">
         <br />
 </form>
+
 </body>
 </html>
