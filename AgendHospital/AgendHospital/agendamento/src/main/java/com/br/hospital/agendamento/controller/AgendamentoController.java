@@ -15,7 +15,7 @@ public class AgendamentoController {
 
     @GetMapping
     public String index(Model model) {
-        return "index";
+        return "index2";
     }
     
     

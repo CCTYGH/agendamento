@@ -15,9 +15,9 @@
     <th>Medicos</th>
     <th>IdConsultas</th>
 </tr>
-<tr th:each="mc : ${consultas}">
-    <td th:text="${mc.nomeMedico}"></td>
-    <td th:text="${mc.idConsulta}"></td>
+<tr th:each="c : ${consultas}">
+    <td th:text="${c.nomeMedico}"></td>
+    <td th:text="${c.idConsulta}"></td>
 </tr>
 
     </table>
