@@ -1,51 +1,77 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro De Clientes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
+
 <body>
 
-    <h1>Cadastrar Clientes</h1>
-    <form th:action="@{/clientes/salvar}" method="POST" th:object="${cliente}">
+    <div class="shadow p-3 my-5 bg-body-terciary roudend container-md">
+        <h1>Cadastrar Clientes</h1>
 
+        <form th:action="@{/clientes/salvar}" method="POST" th:object="${cliente}">
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-3 ms-5 p-1">
+                        
+                    <label for="nomeCliente"></label>
+                    <input type="text" class="form-control border-bottom rounden-0 border-0 fs-5" name="nomeCliente"
+                        th:field="*{nomeCliente}" placeholder="Nome:">
+                    <br />
+                    </div>
+<div class="col-3">
+                    <label for="cpf"></label>
+                    <input type="text" class="form-control border-bottom rounden-0 border-0 fs-5" name="cpf"
+                        th:field="*{cpf}" placeholder="Cpf:">
+                    <br />
+</div>
 
-        <label for="nomeCliente">Nome:</label>
-        <input type="text" name="nomeCliente" th:field="*{nomeCliente}">
-        <br />
+                    <label for="telefone"></label>
+                    <input type="text" class="form-control border-bottom rounden-0 border-0 fs-5" name="telefone"
+                        th:field="*{telefone}" placeholder="Telefone:">
+                    <br />
+                </div>
+                    <label for="cep"></label>
+                    <input id="cep" class="form-control border-bottom rounden-0 border-0 fs-5" type="text" name="cep"
+                        th:field="*{cep}" placeholder="Cep:">
+                    <button type="button" onclick="buscarCep()">Buscar</button>
+                    <br />
 
-        <label for="cpf">CPF:</label>
-        <input type="text" name="cpf" th:field="*{cpf}">
-        <br />
-        <label for="telefone">Telefone:</label>
-        <input type="text" name="telefone" th:field="*{telefone}">
-        <br />
-    <label for="cep">Cep: </label>
-    <input id="cep" type="text" name="cep" th:field="*{cep}">
-        <button type="button" onclick="buscarCep()">Buscar</button>
-        <br />  
-    <label for="endereco">Endereço:</label>
-    <input id="logradouro" type="text" name="endereco" th:field="*{endereco}">
-        <br />
-        <label for="bairro">Bairro:</label>
-    <input id="bairro" type="text" name="bairro" th:field="*{bairro}">
-        <br />
-        <label for="estadoCidade">Cidade e Estado:</label>
-    <input id="estadoCidade" type="text" name="estadoCidade" th:field="*{estadoCidade}">
-        <br />
-        <label for="numero">Número:</label>
-    <input id="numero" type="text" name="numero" th:field="*{numero}">
-        <br />
-        <label for="complemento">Complemento:</label>
-    <input id="complemento" type="text" name="complemento" th:field="*{complemento}">
-        <br />
+                    <label for="endereco"></label>
+                    <input id="logradouro" class="form-control border-bottom rounden-0 border-0 fs-5" type="text"
+                        name="endereco" th:field="*{endereco}" placeholder="Endereço:">
+                    <br />
+                    <label for="bairro"></label>
+                    <input id="bairro" class="form-control border-bottom rounden-0 border-0 fs-5" type="text"
+                        name="bairro" th:field="*{bairro}" placeholder="Bairro:">
+                    <br />
+                    <label for="estadoCidade"></label>
+                    <input id="estadoCidade" class="form-control border-bottom rounden-0 border-0 fs-5" type="text"
+                        name="estadoCidade" th:field="*{estadoCidade}" placeholder="Cidade e Estado">
+                    <br />
+                    <label for="numero"></label>
+                    <input id="numero" class="form-control border-bottom rounden-0 border-0 fs-5" type="text"
+                        name="numero" th:field="*{numero}" placeholder="Número:">
+                    <br />
+                    <label for="complemento"></label>
+                    <input id="complemento" class="form-control border-bottom rounden-0 border-0 fs-5" type="text"
+                        name="complemento" th:field="*{complemento}" placeholder="Complemtento do Endereço:">
+                    <br />
 
-        <input type="submit" name="enviar" value="Enviar">
-        <br />
-</form>
+                    <input type="submit" name="enviar" value="Enviar" class="btn btn-primary">
+                    <br />
+                </div>
+            </div>
+        </form>
+    </div>
 
-<script src="/js/script.js"></script>
+    <script src="/js/script.js"></script>
 </body>
+
 </html>
