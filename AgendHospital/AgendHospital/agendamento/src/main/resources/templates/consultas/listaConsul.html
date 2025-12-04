@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Medicos</title>
+    
+</head>
+
+<body>
+
+    <h1 align="center">Lista de Medico</h1>
+    <h3 align="center"> <a href="/consultas/criar"> Cadastrar </a></h3>
+    <!--Tabela para exibir alunos registrados-->
+
+    <table align="center" border="1">
+        <tr>
+            <th colspan="10">Lista de consultas</th>
+        </tr>
+        <th>idConsulta</th>
+        <th>observacoes</th>
+        <th>datahoraConsulta</th>
+        <th>medicos</th>
+        <th colspan="2">Ações</th>
+
+        <tr th:each="consulta:${consultas}">
+            <td th:text="${consulta.idConsulta}"></td>
+            <td th:text="${consulta.observacoes}"></td>
+            <td th:text="${#temporals.format(consulta.datahoraConsulta, 'dd/MM/yyyy HH:mm')}"></td>
+            <td th:text="${consulta.medico.nomeMedico}"></td>
+            <td th:text="${consulta.cliente.nomeCliente}"></td>
+            <td>
+                <a th:href="@{/consultas/editar/{id}(id=${consulta.idConsulta})}">Editar</a>
+                <a th:href="@{/consultas/excluir/{id}(id=${consulta.idConsulta})}">Excluir</a>
+            </td>
+        </tr>
+</table>
+</body>
+
+</html>

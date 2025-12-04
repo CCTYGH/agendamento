@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro De consulta</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+<body>
+    
+  <script th:src="@{/js/dataAtual.js}"></script>
+    <h1>Cadastrar medicos</h1>
+    <form th:action="@{/consultas/salvar}" method="POST" th:object="${consulta}">
+
+        <label for="idConsulta">ID:</label>
+        <input type="text" name="idConsulta" th:field="*{idConsulta}" readonly>
+        <br />
+        <label for="observacoes">observações:</label>
+        <input type="text" name="observacoes" th:field="*{observacoes}">
+        <br />
+        <label for="datahoraConsulta">Data e Hora da Consulta:</label>
+        <div class="d-flex justify-content-center align-items-center mb-2">
+          <div
+            class="border rounded me-3 p-2"
+            data-coreui-locale="pt-BR"
+            data-coreui-start-date="12/02/2003"
+            data-coreui-toggle="calendar"
+            data-coreui-target="#datahoraConsulta"
+          ></div>
+          <input id="datahoraConsulta" class="form-control" type="datetime-local" name="datahoraConsulta" th:field="*{datahoraConsulta}">
+       
+        <br />
+    
+        <label for="idMedico"></label>
+        <select th:field="*{medico}">
+            <option value=" " disabled selected>Selecione o medico</option>
+            <option th:each="medico: ${medicos}"
+               th:text="${medico.nomeMedico}"
+               th:value="${medico.idMedico}">
+            </option>
+        </select>
+
+        <label for="idCliente"></label>
+        <select th:field="*{cliente}">
+            <option value=" " disabled selected>Selecione o cliente</option>
+            <option th:each="cliente: ${clientes}"
+               th:text="${cliente.nomeCliente}"
+               th:value="${cliente.idCliente}">
+            </option>
+        </select>
+
+        <input type="submit" name="enviar" value="Enviar">
+        <br />
+</form>
+
+</body>
+</html>

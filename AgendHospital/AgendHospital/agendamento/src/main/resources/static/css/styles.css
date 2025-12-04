@@ -1,0 +1,81 @@
+
+body {
+      font-family: 'Arial', serif;
+      background-color: white;
+    }
+
+    h1 {
+  font-size: 3.5rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-top: 40px;
+    }
+
+.text-laranja {
+  color: black;
+  background: linear-gradient(90deg, #ff7301, #ff6f00); 
+  font-size: 48px; 
+  font-family: Arial, sans-serif; 
+  text-align: center; 
+}
+
+.link-laranja{
+    color: #ff7301;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(44, 44, 44);
+  text-align: center;
+  transition: transform 0.5s ease;
+}
+
+.card:hover {
+  transform: scale(1.10);
+}
+
+.card h3{
+  color: #ff7301;
+  font-size: 1.5em;
+}
+
+.card a {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #ff7301;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
+.card a:hover {
+  background-color: #ff6f00;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+footer {
+  background-color: #ff7301;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+
+

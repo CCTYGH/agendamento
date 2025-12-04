@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro De Medicos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+    <div class="shadow bg-body-terciary rounded container-md">
+    
+    <h1>Cadastrar medicos</h1>
+    <form th:action="@{/medicos/salvar}" method="POST" th:object="${medico}">
+
+
+
+        <label for="nomeMedico"></label>
+<div class="col-md-6">
+    <div class="input-grup">
+    <span class="input-group-text" id="basic-addon1"></span>
+    <input type="text" class="form-control border-bottom rounded-0 border-0 fs-5 " name="nomeMedico" th:field="*{nomeMedico}" placeholder=" Nome:" aria-describedby="basic-addon1">
+        <br />
+    </div>
+</div>
+        <label for="crm"></label>
+        <input type="text" class="form-control border-bottom rounded-0 border-0 fs-5" name="crm" th:field="*{crm}" placeholder="CRM:">
+        <br />
+        <label for="especialidade"></label>
+        <input type="text" class="form-control border-bottom rounded-0 border-0 fs-5" name="especialidade" th:field="*{especialidade}" placeholder="Especialização:">
+        <br />
+
+        <div class="d-grid gap-2 col-6 mx-auto">
+        <input type="submit" name="enviar" value="Enviar" class="btn btn-primary"> 
+        <br />
+        </div>
+    </div>
+</form>
+</div>
+</body>
+</html>
