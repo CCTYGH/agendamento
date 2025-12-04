@@ -28,7 +28,7 @@ public class Consulta {
     private Integer idConsulta;
 
 
-    @Column (nullable = false, length = 100)
+    @Column (nullable = false, length = 100000000)
     private String observacoes;
 
 

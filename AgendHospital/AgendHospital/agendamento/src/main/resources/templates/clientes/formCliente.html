@@ -12,60 +12,99 @@
 
 <body>
 
-    <div class="shadow p-3 my-5 bg-body-terciary roudend container-md">
-        <h1>Cadastrar Clientes</h1>
+    <div class="shadow p-3 my-5 bg-body-terciary roudend container-md col-6">
+        <div class="align-item-center">
+        <h1 class="text-center" >Cadastrar Clientes</h1>
 
         <form th:action="@{/clientes/salvar}" method="POST" th:object="${cliente}">
             <div class="col-6">
                 <div class="row">
-                    <div class="col-3 ms-5 p-1">
+                    <div class="col-6">
                         
                     <label for="nomeCliente"></label>
-                    <input type="text" class="form-control border-bottom rounden-0 border-0 fs-5" name="nomeCliente"
+                    <input type="text" class="form-control border-bottom roudend-0 border-0 fs-5" name="nomeCliente"
                         th:field="*{nomeCliente}" placeholder="Nome:">
                     <br />
                     </div>
-<div class="col-3">
+<div class="col-6">
                     <label for="cpf"></label>
-                    <input type="text" class="form-control border-bottom rounden-0 border-0 fs-5" name="cpf"
+                    <input type="text" class="form-control border-bottom roudend-0 border-0 fs-5" name="cpf"
                         th:field="*{cpf}" placeholder="Cpf:">
                     <br />
 </div>
-
+<div class="my-3">
                     <label for="telefone"></label>
-                    <input type="text" class="form-control border-bottom rounden-0 border-0 fs-5" name="telefone"
+                    <input type="text" class="form-control border-bottom roudend-0 border-0 fs-5" name="telefone"
                         th:field="*{telefone}" placeholder="Telefone:">
                     <br />
-                </div>
+</div>
+
+<div class="row align-items-end">
+<div class="col-8">
                     <label for="cep"></label>
-                    <input id="cep" class="form-control border-bottom rounden-0 border-0 fs-5" type="text" name="cep"
+                    <input id="cep" class="form-control border-bottom roudend-0 border-0 fs-5" type="text" name="cep"
                         th:field="*{cep}" placeholder="Cep:">
-                    <button type="button" onclick="buscarCep()">Buscar</button>
+                    </div>
+<div class="col-4 align-items-end">
+                    <button type="button"  class="btn btn-primary" onclick="buscarCep()">Buscar</button>
+                </div>
                     <br />
 
+</div>
+<div class="col-6">
                     <label for="endereco"></label>
-                    <input id="logradouro" class="form-control border-bottom rounden-0 border-0 fs-5" type="text"
+                    <input id="logradouro" class="form-control border-bottom roudend-0 border-0 fs-5" type="text"
                         name="endereco" th:field="*{endereco}" placeholder="Endereço:">
                     <br />
+</div>
+                    <div class="col-3">
                     <label for="bairro"></label>
-                    <input id="bairro" class="form-control border-bottom rounden-0 border-0 fs-5" type="text"
+                    <input id="bairro" class="form-control border-bottom roudend-0 border-0 fs-5" type="text"
                         name="bairro" th:field="*{bairro}" placeholder="Bairro:">
                     <br />
+                </div>
+                <div class="col-3">
+                    <label for="numero"></label>
+                    <input id="numero" class="form-control border-bottom roudend-0 border-0 fs-5" type="text"
+                        name="numero" th:field="*{numero}" placeholder="Número:">
+            </br>
+        </div>
+
+        <div class="my-3">
                     <label for="estadoCidade"></label>
-                    <input id="estadoCidade" class="form-control border-bottom rounden-0 border-0 fs-5" type="text"
+                    <input id="estadoCidade" class="form-control border-bottom roudend-0 border-0 fs-5" type="text"
                         name="estadoCidade" th:field="*{estadoCidade}" placeholder="Cidade e Estado">
                     <br />
-                    <label for="numero"></label>
-                    <input id="numero" class="form-control border-bottom rounden-0 border-0 fs-5" type="text"
-                        name="numero" th:field="*{numero}" placeholder="Número:">
-                    <br />
+        </div>
+        <div class="my-4">
                     <label for="complemento"></label>
-                    <input id="complemento" class="form-control border-bottom rounden-0 border-0 fs-5" type="text"
+                    <input id="complemento" class="form-control border-bottom roudend-0 border-0 fs-5" type="text"
                         name="complemento" th:field="*{complemento}" placeholder="Complemtento do Endereço:">
                     <br />
+        </div>
+       <!-- Button trigger modal -->
+<!-- Botão que abre o modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#meuModal">
+    Abrir Modal
+</button>
 
-                    <input type="submit" name="enviar" value="Enviar" class="btn btn-primary">
-                    <br />
+<!-- Modal -->
+<div class="modal fade" id="meuModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Título</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">Conteúdo do modal</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+                    <h3 align="center"> <a href="/agendamento" > Voltar</a></h3>
                 </div>
             </div>
         </form>

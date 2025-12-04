@@ -1,24 +1,49 @@
- function buscarCep() {
-        var cep = document.getElementById("cep").value;
-        var url = "https://viacep.com.br/ws/" + cep + "/json/";
+function buscarCep() {
 
-        if (cep.length !== 8) {
-            alert("Por favor, insira um CEP válido.");
-            return;
-        }
+    let cep = document.getElementById("cep").value.replace(/\D/g, "");
 
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                if (!data.erro) {
-                    document.getElementById("logradouro").value = data.logradouro;
-                    document.getElementById("bairro").value = data.bairro;
-                    document.getElementById("estadoCidade").value = data.localidade + " - " + data.uf;
-                } else {
-                    alert("CEP não encontrado.");
-                }
-            })
-            .catch(error => {
-                console.error("Erro ao buscar o CEP:", error);
-            });
-        }
+    if (cep === "") {
+        alert("Digite um CEP.");
+        return;
+    }
+
+    let validaCep = /^[0-9]{8}$/;
+
+    if (!validaCep.test(cep)) {
+        alert("CEP inválido! Use 8 números.");
+        return;
+    }
+
+    document.getElementById("logradouro").value = "...";
+    document.getElementById("bairro").value = "...";
+    document.getElementById("estadoCidade").value = "...";
+
+    fetch(`https://viacep.com.br/ws/${cep}/json/`)
+        .then(response => response.json())
+        .then(dados => {
+
+            if (dados.erro) {
+                alert("CEP não encontrado.");
+                limparCampos();
+                return;
+            }
+
+            document.getElementById("logradouro").value = dados.logradouro;
+            document.getElementById("bairro").value = dados.bairro;
+
+
+            document.getElementById("estadoCidade").value = 
+                `${dados.localidade} - ${dados.uf}`;
+        })
+        .catch(error => {
+            alert("Erro ao buscar CEP.");
+            limparCampos();
+        });
+
+}
+
+function limparCampos() {
+    document.getElementById("logradouro").value = "";
+    document.getElementById("bairro").value = "";
+    document.getElementById("estadoCidade").value = "";
+}
