@@ -12,7 +12,7 @@
 
 <body>
 
-    <div class="shadow p-3 my-5 bg-body-terciary roudend container-md col-6">
+    <div class="shadow p-3 my-5 bg-body-terciary roudend container-md col-8">
         <div class="align-item-center">
         <h1 class="text-center" >Cadastrar Clientes</h1>
 
@@ -82,34 +82,37 @@
                         name="complemento" th:field="*{complemento}" placeholder="Complemtento do Endereço:">
                     <br />
         </div>
-       <!-- Button trigger modal -->
-<!-- Botão que abre o modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#meuModal">
-    Abrir Modal
-</button>
 
-<!-- Modal -->
-<div class="modal fade" id="meuModal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Título</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">Conteúdo do modal</div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-            </div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Confirmar
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Deseja continuar com o envio de seus dados?</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+          Se tem certeza que os seus dados estão corretos aperte <strong>Sim</strong>, Se deseja rever os seus dados aperte <strong>Não</strong>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+          <input type="submit" name="enviar" value="Sim">
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 
                     <h3 align="center"> <a href="/agendamento" > Voltar</a></h3>
                 </div>
             </div>
         </form>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/script.js"></script>
 </body>
 
