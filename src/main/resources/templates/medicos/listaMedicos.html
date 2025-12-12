@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista medicos</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+      <link rel="stylesheet" th:href="@{/css/styleListaCliente.css}">
+</head>
+
+    
+<body class="bg-dark-subtle">
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary mb-5">
+  <div class="container-fluid">
+    
+    <a class="navbar-brand d-flex align-items-center" href="#"> <img src="/img/icone_clinica.svg" class="icon-svg me-2 mb-3" alt="Ícone da Clínica" width="85">
+   <h3 class="m-0 fs-2 fw-bold" style="color: #1844DC;">CLÍNICA <p>BERCELIUS</p></h3></a>
+
+<nav aria-label="breadcrumb" style="--bs-breadcrumb-divider: '>';" class="ms-3">
+  <ol class="breadcrumb fs-5 mt-3">
+    <li class="breadcrumb-item"><a href="/agendamento" class="text-decoration-none"><i class="bi bi-house me-1"></i>Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><i class="bi bi-file-medical me-1"></i>Médicos</li>
+  </ol>
+</nav>
+
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-danger fs-4" href="/medicos/criar"><i class="bi bi-person-plus me-2"></i>Cadastrar Médicos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-success fs-4" href="/agendamento"><i class="bi bi-arrow-left me-2"></i>Voltar</a>
+        </li>
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle fs-4" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="bi bi-grid-3x3-gap-fill me-2 "></i>  Departamentos
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/consultas/listar">Lista de consultas</a></li>
+            <li><a class="dropdown-item" href="/clientes/listar">Lista de Clientes</a></li>
+             <li><a class="dropdown-item" href="/consultas/listar-med-consu">Lista de Médicos e Consultas</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      <table class="table table-striped-columns table-hover w-auto mx-auto mt-4">
+      <thead class="table-dark text-center">
+                <tr>
+            <th colspan="10">Lista de Médicos</th>
+                </tr>
+</thead>
+<tr class="table-secondary text-center">
+        <th>ID</th>
+        <th>NomeMedicos</th>
+        <th>Crm</th>
+        <th>Especialiades</th>
+        <th colspan="2">Ações</th>
+</tr>
+<tbody>
+        <tr th:each="medico:${medicos}">
+            <td th:text="${medico.idMedico}"></td>
+            <td th:text="${medico.nomeMedico}"></td>
+            <td th:text="${medico.crm}"></td>
+            <td th:text="${medico.especialidade}"></td>
+            
+            <td class="me-4">
+                <a th:href="@{/medicos/editar/{id}(id=${medico.idMedico})}"><i class="bi bi-pencil-square text-primary"></i></a>
+               <a href="#" 
+   data-bs-toggle="modal" 
+   data-bs-target="#confirmDeleteModal"
+   data-id="${medico.idMedico}">
+    <i class="bi bi-trash text-danger"></i>
+</a>
+
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title text-danger">Confirmar exclusão</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        Tem certeza que deseja excluir este médico?<p class="fs-5">Excluir esse médico fará com que a consulta que ele tenha seja excluída também.</p>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <a id="btnDelete" th:href="@{/medicos/excluir/{id}(id=${medico.idMedico})}" class="btn btn-danger">Excluir</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+            </td>
+        </tr>
+</tbody>
+</table>
+</body>
+
+</html>
